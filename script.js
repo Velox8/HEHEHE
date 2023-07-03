@@ -52,6 +52,7 @@ const closeModal = () => {
 
     
     writingAnimation();
+    writingAnimation2();
 	clearStuff();
 };
 
@@ -64,7 +65,7 @@ const clearStuff = () => {
 };
 modalBtn.addEventListener('click', showModal);
 saveBtn.addEventListener('click', closeModal);
-writingAnimation();
+
 
 
 
