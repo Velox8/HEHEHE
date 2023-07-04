@@ -52,7 +52,7 @@ const closeModal = () => {
 	modal.classList.remove('active');
 
     
-	writingAnimation2();
+	setTimeout(writingAnimation2, 3000);
 	clearStuff();
 };
 
@@ -69,9 +69,9 @@ saveBtn.addEventListener('click', closeModal);
 
 
 
-saveBtn.addEventListener('click', function() {
+saveBtn.addEventListener('click', function() {setTimeout(function(){
 	// Włączamy film przez ustawienie nowego URL w tagu iframe
-	 videoPlayer.src = "https://www.youtube.com/embed/hI4xnWEw_Wk?start=25&autoplay=1";
+	 videoPlayer.src = "https://www.youtube.com/embed/hI4xnWEw_Wk?start=25&autoplay=1"}, 2000)
   });
 writingAnimation();
 
