@@ -7,6 +7,7 @@ const errorMsg = document.querySelector('.error-msg');
 
 let inputValue = 'To jest tekstowa wiadomość';
 let timeout;
+let timeout2
 let index = 1;
 let index2 = 1;
 let speed = 120;
@@ -18,7 +19,7 @@ let speed = 120;
 
 
 
-const writingAnimation = () => {if (input.value == 0)
+const writingAnimation = () => {if (input.value !== 0)
     {text.innerHTML = "HEJ JAK SIĘ MASZ GABRYSIU !!!!! :)".slice(0, index);
     
 	index++;
@@ -33,9 +34,9 @@ const writingAnimation2  = () => {
     
 		index2++;
 		
-		// if (index2 > inputValue) return;
+		if (index2 > inputValue) return;
 		
-		timeout = setTimeout(writingAnimation2, speed);
+		timeout2 = setTimeout(writingAnimation2, speed);
 }
 
 const showModal = () => {
@@ -51,13 +52,12 @@ const closeModal = () => {
 	modal.classList.remove('active');
 
     
-    writingAnimation();
-    writingAnimation2();
+	writingAnimation2();
 	clearStuff();
 };
 
 const clearStuff = () => {
-    index = 1;
+	index = 1;
 	clearTimeout(timeout);
 	input.value = '';
     
@@ -69,5 +69,8 @@ saveBtn.addEventListener('click', closeModal);
 
 
 
-
-
+saveBtn.addEventListener('click', function() {
+	// Włączamy film przez ustawienie nowego URL w tagu iframe
+	 videoPlayer.src = "https://www.youtube.com/embed/hI4xnWEw_Wk?start=25&autoplay=1";
+  });
+writingAnimation();
